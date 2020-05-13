@@ -6,5 +6,8 @@ namespace Domain.Models.Turma
 {
    public  interface ITurma
     {
+         int idTurma { get; set; }
+
+        string Oferta { get; set; }
     }
 }

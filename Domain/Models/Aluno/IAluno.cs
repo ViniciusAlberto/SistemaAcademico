@@ -10,6 +10,6 @@ namespace Domain.Models.Aluno
         string Nome { get; set; }
         string CPF { get; set; }
         DateTime DataNascimento { get; set; }
-        Sexo Sexo { get; set; }
+        Enum.Sexo Sexo { get; set; }
     }
 }

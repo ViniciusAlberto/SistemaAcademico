@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Models.Curso
+namespace Domain.Models.DisciplinaTurma
 {
-    public interface ICurso
+   public  class DisciplinaTurma
     {
     }
 }

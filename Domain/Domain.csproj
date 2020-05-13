@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Models\Aluno\ValueObjects\" />
-    <Folder Include="Models\Curso\ValueObjects\" />
     <Folder Include="Models\Disciplina\ValueObjects\" />
     <Folder Include="Models\Matricula\ValueObjects\" />
     <Folder Include="Models\Turma\ValueObjects\" />

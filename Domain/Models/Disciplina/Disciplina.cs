@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.Models.Disciplina
 {
-    class Disciplina :IDisciplina
+    public class Disciplina :IDisciplina
     {
     }
 }
