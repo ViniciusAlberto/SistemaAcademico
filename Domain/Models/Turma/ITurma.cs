@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace Domain.Models.Turma
 {
-   public  interface ITurma
+    public interface ITurma
     {
-         int idTurma { get; set; }
+        int IdTurma { get; set; }
 
         string Oferta { get; set; }
+
+        DateTime DataInicioTurma { get; set; }
+
+        DateTime DataTerminoTurma { get; set; }
+
+        DateTime DataCadastro { get; set; }
     }
 }

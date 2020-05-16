@@ -1,11 +1,10 @@
 ﻿using Domain.Models.Aluno.Enum;
 using System;
 
-namespace Domain.Models.Aluno
+namespace Application.UseCase.Aluno
 {
-    public class Aluno : IAluno
+    public class AlunoEntrada
     {
-        public int IdAluno { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
         public DateTime DataNascimento { get; set; }

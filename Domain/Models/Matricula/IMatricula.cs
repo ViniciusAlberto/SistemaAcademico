@@ -1,17 +1,18 @@
 ﻿using Domain.Models.Aluno;
-using Domain.Models.Disciplina;
+using Domain.Models.DisciplinaTurma;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Models.Matricula
 {
     public interface IMatricula
     {
-         int idMatricula { get; set; }
+        int IdMatricula { get; set; }
 
-         IAluno Aluno { get; set; }
+        IAluno Aluno { get; set; }
 
-        List<IDisciplina> Disciplinas { get; set; }
+        DateTime DataMatricula { get; set; }
+
+        List<ITurmaDisciplina> TurmaDisciplinas { get; set; }
     }
 }

@@ -1,11 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Application.UseCase.Aluno;
+using Application.UseCase.Matricula;
+using Domain.Repository;
+using Domain.Service.Aluno;
+using Domain.Service.Disciplina;
+using Domain.Service.Matricula;
+using Domain.Service.TurmaDisciplina;
+using Infrastructure.Repository.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 
 namespace WebApi
 {
@@ -15,6 +20,30 @@ namespace WebApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            #region Repository
+            services.AddScoped<IAlunoRepository, AlunoRepository>();
+            services.AddScoped<IMatriculaRepository, MatriculaRepository>();
+            services.AddScoped<IDisciplinaRepository, DisciplinaRepository>();
+            #endregion
+
+            #region UseCases
+            services.AddScoped<ICadastroMatricula, CadastroMatricula>();
+            services.AddScoped<ICadastroAluno, CadastroAluno>();
+            #endregion
+
+            #region Services
+            services.AddScoped<IAlunoService, AlunoService>();
+            services.AddScoped<IDisciplinaService, DisciplinaService>();
+            services.AddScoped<IMatriculaService, MatriculaService>();
+            services.AddScoped<ITurmaDisciplinaService, TurmaDisciplinaService>();
+            #endregion
+
+            services.AddMvc();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gestão Matrícula", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,10 +54,18 @@ namespace WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestão Matrícula");
+                c.RoutePrefix = string.Empty;
             });
+
+            app.UseHttpsRedirection();
+            app.UseMvc();
         }
     }
 }

@@ -1,15 +1,18 @@
 ﻿using Domain.Models.Aluno.Enum;
 using System;
 
-namespace Domain.Models.Aluno
+namespace Application.UseCase.Matricula
 {
-    public class Aluno : IAluno
+    public class MatriculaEntrada
     {
-        public int IdAluno { get; set; }
+        public int IdTurmaDisciplina { get; set; }
+        
         public string Nome { get; set; }
-        public string CPF { get; set; }
+
+        public string Cpf { get; set; }
+
         public DateTime DataNascimento { get; set; }
-        public DateTime DataCadastro { get; set; }
+
         public Sexo Sexo { get; set; }
     }
 }

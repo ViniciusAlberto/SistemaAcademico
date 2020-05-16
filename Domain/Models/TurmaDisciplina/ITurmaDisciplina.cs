@@ -1,12 +1,9 @@
 ﻿using Domain.Models.Disciplina;
 using Domain.Models.Turma;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Models.DisciplinaTurma
 {
-    public interface IDisciplinaTurma
+    public interface ITurmaDisciplina
     {
         IDisciplina Disciplina { get; set; }
 

@@ -1,20 +1,21 @@
-﻿using Domain.Models.Curso;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace Domain.Models.Disciplina
 {
-   public  interface IDisciplina
+    public interface IDisciplina
     {
-         int idDisciplina { get; set; }
+        int IdDisciplina { get; set; }
 
-         string Nome { get; set; }
+        string Nome { get; set; }
 
         int CargaHoraria { get; set; }
 
         int Capacidade { get; set; }
 
+        DateTime DataInicioTurma { get; set; }
 
+        DateTime DataTerminoTurma { get; set; }
+
+        DateTime DataCadastro { get; set; }
     }
 }

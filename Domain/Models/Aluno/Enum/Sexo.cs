@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Domain.Models.Aluno.Enum
+﻿namespace Domain.Models.Aluno.Enum
 {
     public enum Sexo
     {
