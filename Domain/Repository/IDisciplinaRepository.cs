@@ -8,5 +8,7 @@ namespace Domain.Repository
         Task<int> ConsultaVagasDisciplina(int idDisciplina);
 
         Task<IDisciplina> ListarDisciplinas(int IdTurma);
+        Task<IDisciplina> ConsultarDisciplinaAsync(int idDisciplina);
+        Task<IDisciplina> ListarDisciplinasAsync(int idTurma);
     }
 }

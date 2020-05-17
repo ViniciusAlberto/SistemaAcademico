@@ -20,9 +20,14 @@ namespace Domain.Service.Disciplina
         }
   
 
-        public async Task<IDisciplina> ListarDisciplinas(int IdTurma)
+        public async Task<IDisciplina> ListarDisciplinasAsync(int IdTurma)
         {
-            return await disciplinaRepository.ListarDisciplinas(IdTurma);
+            return await disciplinaRepository.ListarDisciplinasAsync(IdTurma);
+        }
+
+        public async Task<IDisciplina> ConsultarDisciplinaAsync(int idDisciplina)
+        {
+            return await disciplinaRepository.ConsultarDisciplinaAsync(idDisciplina);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Domain.Models.Matricula;
+﻿using Domain.Models.Disciplina;
+using Domain.Models.Matricula;
 using System.Threading.Tasks;
 
 namespace Domain.Service.Matricula
@@ -8,8 +9,7 @@ namespace Domain.Service.Matricula
         Task<int> ConsultaQuantidadeMatriculasTurmaDisciplinaAsync(int idTurmaDisciplina);
 
         Task<int> RealizaMatriculaAsync(IMatricula matricula);
-        Task<IMatricula> EspelhoMatricula(int idAluno);
-
-       
+        Task<IMatricula> EspelhoMatriculaAsync(int idAluno);
+        Task<IMatricula> ConsultarMatriculaAsync(int idMatricula);
     }
 }

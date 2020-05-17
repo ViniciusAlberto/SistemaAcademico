@@ -12,6 +12,16 @@ namespace Infrastructure.Repository.Repositories
             return Task.FromResult(10);
         }
 
+        public Task<IMatricula> ConsultarMatriculaAsync(int idMatricula)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IMatricula> EspelhoMatriculaAsync(int idAluno)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<int> RealizaMatriculaAsync(IMatricula matricula)
         {
             return Task.FromResult(10154);

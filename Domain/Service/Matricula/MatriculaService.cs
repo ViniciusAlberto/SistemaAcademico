@@ -24,9 +24,13 @@ namespace Domain.Service.Matricula
             return await matriculaRepository.RealizaMatriculaAsync(matricula);
         }
 
-        public async Task<IMatricula> EspelhoMatricula(int IdAluno)
+        public async Task<IMatricula> EspelhoMatriculaAsync(int IdAluno)
         {
-            return await matriculaRepository.EspelhoMatricula(IdAluno);
+            return await matriculaRepository.EspelhoMatriculaAsync(IdAluno);
+        }
+        public async Task<IMatricula> ConsultarMatriculaAsync(int idMatricula)
+        {
+            return await matriculaRepository.ConsultarMatriculaAsync(idMatricula);
         }
     }
 }

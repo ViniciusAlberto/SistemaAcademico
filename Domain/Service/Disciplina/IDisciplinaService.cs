@@ -1,4 +1,5 @@
 ﻿using Domain.Models.Disciplina;
+using Domain.Models.Matricula;
 using System.Threading.Tasks;
 
 namespace Domain.Service.Disciplina
@@ -7,6 +8,7 @@ namespace Domain.Service.Disciplina
     {
         Task<int> ConsultaVagasDisciplina(int idDisciplina);
 
-        Task<IDisciplina> ListarDisciplinas(int IdTurma);
+        Task<IDisciplina> ListarDisciplinasAsync(int IdTurma);   
+        Task<IDisciplina> ConsultarDisciplinaAsync(int idDisciplina);
     }
 }
