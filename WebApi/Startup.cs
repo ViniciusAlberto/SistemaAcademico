@@ -1,4 +1,6 @@
 ﻿using Application.UseCase.Aluno;
+using Application.UseCase.Disciplina;
+using Application.UseCase.DisciplinaMatricula.CancelamentoMatricula;
 using Application.UseCase.Matricula;
 using Domain.Repository;
 using Domain.Service.Aluno;
@@ -8,7 +10,6 @@ using Domain.Service.TurmaDisciplina;
 using Infrastructure.Repository.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
@@ -24,11 +25,14 @@ namespace WebApi
             services.AddScoped<IAlunoRepository, AlunoRepository>();
             services.AddScoped<IMatriculaRepository, MatriculaRepository>();
             services.AddScoped<IDisciplinaRepository, DisciplinaRepository>();
+            services.AddScoped<IDisciplinaMatriculaRepository, DisciplinaMatriculaRepository>();
             #endregion
 
             #region UseCases
             services.AddScoped<ICadastroMatricula, CadastroMatricula>();
             services.AddScoped<ICadastroAluno, CadastroAluno>();
+            services.AddScoped<IListarDisciplinas, ListarDisciplinas>();
+            services.AddScoped<ICancelamentoMatricula, CancelamentoMatricula>();
             #endregion
 
             #region Services

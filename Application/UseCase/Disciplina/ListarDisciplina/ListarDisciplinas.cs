@@ -1,6 +1,8 @@
-﻿using Domain.Models.Disciplina;
+﻿using Application.UseCase.Disciplina.ListarDisciplina;
 using Domain.Service.Disciplina;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Application.UseCase.Disciplina
@@ -15,9 +17,11 @@ namespace Application.UseCase.Disciplina
                 ?? throw new ArgumentNullException(nameof(disciplinaService));
         }
 
-        public async Task<IDisciplina> ListarDisciplinasAsync(int IdTurma)
+        public async Task<IEnumerable<ListarDiciplinasSaida>> ListarDisciplinasAsync(int IdTurma)
         {
-            return await disciplinaService.ListarDisciplinasAsync(IdTurma);
+            var disciplinas = await disciplinaService.ListarDisciplinasAsync(IdTurma);
+
+            return Enumerable.Empty<ListarDiciplinasSaida>();
         }
     }
 }

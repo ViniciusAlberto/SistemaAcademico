@@ -17,6 +17,11 @@ namespace WebApi.Controllers
                 ?? throw new ArgumentNullException(nameof(cadastroMatricula));
         }
 
+        /// <summary>
+        /// Realiza a matrícula de um aluno em uma ou mais disciplinas.
+        /// </summary>
+        /// <param name="matriculaEntrada"></param>
+        /// <returns>Retorna a matrícula gerada para o aluno.</returns>
         [HttpPost]
         [ProducesResponseType(typeof(MatriculaEntrada), 200)]
         public async Task<IActionResult> RegistraMatriculaAsync(MatriculaEntrada matriculaEntrada)

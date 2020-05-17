@@ -1,4 +1,5 @@
 ﻿using Domain.Models.Disciplina;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Domain.Repository
@@ -9,6 +10,6 @@ namespace Domain.Repository
 
         Task<IDisciplina> ConsultarDisciplinaAsync(int idDisciplina);
 
-        Task<IDisciplina> ListarDisciplinasAsync(int idTurma);
+        Task<IEnumerable<IDisciplina>> ListarDisciplinasAsync(int idTurma);
     }
 }

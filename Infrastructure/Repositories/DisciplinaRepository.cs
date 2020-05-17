@@ -1,6 +1,8 @@
 ﻿using Domain.Models.Disciplina;
 using Domain.Repository;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Repository.Repositories
@@ -17,9 +19,9 @@ namespace Infrastructure.Repository.Repositories
             return Task.FromResult(1000);
         }
 
-        public Task<IDisciplina> ListarDisciplinasAsync(int idTurma)
+        public Task<IEnumerable<IDisciplina>> ListarDisciplinasAsync(int idTurma)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(Enumerable.Empty<IDisciplina>());
         }
     }
 }
