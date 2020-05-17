@@ -7,5 +7,6 @@ namespace Domain.Repository
     {
         Task<int> ConsultaQuantidadeMatriculasTurmaDisciplinaAsync(int idTurmaDisciplina);
         Task<int> RealizaMatriculaAsync(IMatricula matricula);
+        Task<IMatricula> EspelhoMatricula(int idAluno);
     }
 }

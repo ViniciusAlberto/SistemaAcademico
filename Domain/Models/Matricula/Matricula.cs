@@ -1,6 +1,6 @@
 ﻿using Domain.Models.Aluno;
 using Domain.Models.Disciplina;
-using Domain.Models.DisciplinaTurma;
+using Domain.Models.DisciplinaMatricula;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,9 @@ namespace Domain.Models.Matricula
     {
         public int IdMatricula { get; set; }
         public IAluno Aluno { get; set; }
+
         public List<IDisciplina> Disciplinas { get; set; }
+        public List<IDisciplinaMatricula> DisciplinaMatricula { get; set; }
         public List<ITurmaDisciplina> TurmaDisciplinas { get; set; }
         public DateTime DataMatricula { get; set; }
     }

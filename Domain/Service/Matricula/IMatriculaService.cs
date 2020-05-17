@@ -8,5 +8,8 @@ namespace Domain.Service.Matricula
         Task<int> ConsultaQuantidadeMatriculasTurmaDisciplinaAsync(int idTurmaDisciplina);
 
         Task<int> RealizaMatriculaAsync(IMatricula matricula);
+        Task<IMatricula> EspelhoMatricula(int idAluno);
+
+       
     }
 }

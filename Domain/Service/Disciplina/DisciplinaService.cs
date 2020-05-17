@@ -1,4 +1,5 @@
-﻿using Domain.Repository;
+﻿using Domain.Models.Disciplina;
+using Domain.Repository;
 using System;
 using System.Threading.Tasks;
 
@@ -16,6 +17,12 @@ namespace Domain.Service.Disciplina
         public async Task<int> ConsultaVagasDisciplina(int idDisciplina)
         {
             return await disciplinaRepository.ConsultaVagasDisciplina(idDisciplina);
+        }
+  
+
+        public async Task<IDisciplina> ListarDisciplinas(int IdTurma)
+        {
+            return await disciplinaRepository.ListarDisciplinas(IdTurma);
         }
     }
 }

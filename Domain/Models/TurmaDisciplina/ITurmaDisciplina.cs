@@ -1,7 +1,7 @@
 ﻿using Domain.Models.Disciplina;
 using Domain.Models.Turma;
 
-namespace Domain.Models.DisciplinaTurma
+namespace Domain.Models.DisciplinaMatricula
 {
     public interface ITurmaDisciplina
     {

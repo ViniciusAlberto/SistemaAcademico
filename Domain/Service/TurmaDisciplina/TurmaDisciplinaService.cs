@@ -1,4 +1,5 @@
-﻿using Domain.Service.Disciplina;
+﻿using Domain.Models.Matricula;
+using Domain.Service.Disciplina;
 using Domain.Service.Matricula;
 using System;
 using System.Threading.Tasks;
@@ -42,5 +43,7 @@ namespace Domain.Service.TurmaDisciplina
         {
             return Task.FromResult(1);
         }
+
+    
     }
 }
