@@ -14,6 +14,7 @@ namespace Domain.Service.Matricula
             this.matriculaRepository = matriculaRepository 
                 ?? throw new ArgumentNullException(nameof(matriculaRepository));
         }
+
         public async Task<int> ConsultaQuantidadeMatriculasTurmaDisciplinaAsync(int idTurmaDisciplina)
         {
             return await matriculaRepository.ConsultaQuantidadeMatriculasTurmaDisciplinaAsync(idTurmaDisciplina);
@@ -24,9 +25,9 @@ namespace Domain.Service.Matricula
             return await matriculaRepository.RealizaMatriculaAsync(matricula);
         }
 
-        public async Task<IMatricula> EspelhoMatriculaAsync(int IdAluno)
+        public async Task<IMatricula> EspelhoMatriculaAsync(int idAluno)
         {
-            return await matriculaRepository.EspelhoMatriculaAsync(IdAluno);
+            return await matriculaRepository.EspelhoMatriculaAsync(idAluno);
         }
         public async Task<IMatricula> ConsultarMatriculaAsync(int idMatricula)
         {

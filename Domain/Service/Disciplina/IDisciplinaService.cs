@@ -1,5 +1,4 @@
 ﻿using Domain.Models.Disciplina;
-using Domain.Models.Matricula;
 using System.Threading.Tasks;
 
 namespace Domain.Service.Disciplina

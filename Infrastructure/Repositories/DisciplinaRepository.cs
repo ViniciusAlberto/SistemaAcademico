@@ -17,11 +17,6 @@ namespace Infrastructure.Repository.Repositories
             return Task.FromResult(1000);
         }
 
-        public Task<IDisciplina> ListarDisciplinas(int IdTurma)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<IDisciplina> ListarDisciplinasAsync(int idTurma)
         {
             throw new NotImplementedException();
