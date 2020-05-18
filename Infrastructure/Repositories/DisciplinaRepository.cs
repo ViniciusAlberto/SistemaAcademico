@@ -41,7 +41,7 @@ namespace Infrastructure.Repository.Repositories
                 {
                     Capacidade = 5,
                     CargaHoraria = 32,
-                    IdDisciplina = 2,
+                    IdDisciplina = 3,
                     Nome = "Lógica de programação"
                 }
             };
