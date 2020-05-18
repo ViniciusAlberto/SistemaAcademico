@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
+using Presentation;
 
 namespace WebApi
 {
@@ -41,6 +43,8 @@ namespace WebApi
             services.AddScoped<IMatriculaService, MatriculaService>();
             services.AddScoped<ITurmaDisciplinaService, TurmaDisciplinaService>();
             #endregion
+
+            services.AddAutoMapper(typeof(PresentationProfile));
 
             services.AddMvc();
 
