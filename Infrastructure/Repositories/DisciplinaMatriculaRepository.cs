@@ -9,7 +9,7 @@ namespace Infrastructure.Repository.Repositories
     {
         public Task<bool> CancelamentoMatricula(IDisciplinaMatricula disciplinaMatricula)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(true);
         }
     }
 }

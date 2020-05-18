@@ -21,30 +21,7 @@ namespace Infrastructure.Repository.Repositories
 
         public Task<IEnumerable<IDisciplina>> ListarDisciplinasAsync(int idTurma)
         {
-            IEnumerable<IDisciplina> disciplinas = new List<IDisciplina>()
-            {
-                new Disciplina
-                {
-                    Capacidade = 10,
-                    CargaHoraria = 48,
-                    IdDisciplina = 1,
-                    Nome = "Front End"
-                },
-                new Disciplina
-                {
-                    Capacidade = 12,
-                    CargaHoraria = 32,
-                    IdDisciplina = 2,
-                    Nome = "Gestão de projetos"
-                },
-                new Disciplina
-                {
-                    Capacidade = 5,
-                    CargaHoraria = 32,
-                    IdDisciplina = 3,
-                    Nome = "Lógica de programação"
-                }
-            };
+            IEnumerable<IDisciplina> disciplinas = DataFake.DataFake.disciplinas();
 
             return Task.FromResult(disciplinas);
         }

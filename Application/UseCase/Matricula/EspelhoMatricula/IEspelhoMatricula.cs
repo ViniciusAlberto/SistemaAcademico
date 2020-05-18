@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Application.UseCase.Matricula.EspelhoMatricula
 {
-    interface IEspelhoMatricula
+    public interface IEspelhoMatricula
     {
-        Task<IMatricula> EspelhoMatriculaAsync(int IdAluno);
+        Task<EspelhoMatriculaSaida> EspelhoMatriculaAsync(int IdAluno);
     }
 }

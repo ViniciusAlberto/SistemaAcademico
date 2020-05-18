@@ -13,9 +13,6 @@ namespace Domain.Models.Matricula
 
         DateTime DataMatricula { get; set; }
 
-
-        List<ITurmaDisciplina> TurmaDisciplinas { get; set; }
-
         List<IDisciplinaMatricula> DisciplinaMatricula { get; set; }
     }
 }

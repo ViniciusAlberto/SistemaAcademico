@@ -1,4 +1,5 @@
 ﻿using Application.UseCase.Matricula;
+using Application.UseCase.Matricula.EspelhoMatricula;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -10,11 +11,15 @@ namespace WebApi.Controllers
     public class MatriculasController : ControllerBase
     {
         private readonly ICadastroMatricula cadastroMatricula;
+        private readonly IEspelhoMatricula espelhoMatricula;
 
-        public MatriculasController(ICadastroMatricula cadastroMatricula)
+        public MatriculasController(ICadastroMatricula cadastroMatricula, IEspelhoMatricula espelhoMatricula)
         {
             this.cadastroMatricula = cadastroMatricula 
                 ?? throw new ArgumentNullException(nameof(cadastroMatricula));
+
+            this.espelhoMatricula = espelhoMatricula
+                ?? throw new ArgumentNullException(nameof(espelhoMatricula));
         }
 
         /// <summary>
@@ -27,6 +32,18 @@ namespace WebApi.Controllers
         public async Task<IActionResult> RegistraMatriculaAsync(MatriculaEntrada matriculaEntrada)
         {
             return Ok(await cadastroMatricula.RealizaMatriculaAsync(matriculaEntrada));
+        }
+
+        /// <summary>
+        /// Mostar o espelho da Matricula do Aluno
+        /// </summary>
+        /// <param name="idAluno"></param>
+        /// <returns>Retorna a matrícula do aluno.</returns>
+        [HttpGet("/Aluno/{idAluno}")]
+        [ProducesResponseType(typeof(int), 200)]
+        public async Task<IActionResult> EspelhoMatriculaAsync(int idAluno)
+        {
+            return Ok(await espelhoMatricula.EspelhoMatriculaAsync(idAluno));
         }
     }
 }

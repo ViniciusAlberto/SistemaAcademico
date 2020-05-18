@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Models.Turma;
+using System;
 
 namespace Domain.Models.Disciplina
 {
@@ -11,6 +12,7 @@ namespace Domain.Models.Disciplina
         int CargaHoraria { get; set; }
 
         int Capacidade { get; set; }
+      
 
         DateTime DataInicioTurma { get; set; }
 

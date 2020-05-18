@@ -9,7 +9,7 @@ namespace Infrastructure.Repository.Repositories
     {
         public Task<int> CadastraAlunoAsync(IAluno aluno)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(new Random().Next(1, 5));
         }
     }
 }

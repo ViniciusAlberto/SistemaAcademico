@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
 using Presentation;
+using Application.UseCase.Matricula.EspelhoMatricula;
 
 namespace WebApi
 {
@@ -35,6 +36,7 @@ namespace WebApi
             services.AddScoped<ICadastroAluno, CadastroAluno>();
             services.AddScoped<IListarDisciplinas, ListarDisciplinas>();
             services.AddScoped<ICancelamentoMatricula, CancelamentoMatricula>();
+            services.AddScoped<IEspelhoMatricula, EspelhoMatricula>();
             #endregion
 
             #region Services
