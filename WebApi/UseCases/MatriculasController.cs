@@ -34,16 +34,6 @@ namespace WebApi.Controllers
             return Ok(await cadastroMatricula.RealizaMatriculaAsync(matriculaEntrada));
         }
 
-        /// <summary>
-        /// Mostar o espelho da Matricula do Aluno
-        /// </summary>
-        /// <param name="idAluno"></param>
-        /// <returns>Retorna a matrícula do aluno.</returns>
-        [HttpGet("/Aluno/{idAluno}")]
-        [ProducesResponseType(typeof(int), 200)]
-        public async Task<IActionResult> EspelhoMatriculaAsync(int idAluno)
-        {
-            return Ok(await espelhoMatricula.EspelhoMatriculaAsync(idAluno));
-        }
+       
     }
 }
