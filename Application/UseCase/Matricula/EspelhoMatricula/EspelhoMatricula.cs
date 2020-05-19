@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using Domain.Models.Matricula;
 using Domain.Service.Matricula;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Application.UseCase.Matricula.EspelhoMatricula

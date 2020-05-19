@@ -1,5 +1,4 @@
-﻿using Domain.Models.Matricula;
-using Domain.Service.Disciplina;
+﻿using Domain.Service.Disciplina;
 using Domain.Service.Matricula;
 using System;
 using System.Threading.Tasks;
@@ -21,13 +20,11 @@ namespace Domain.Service.TurmaDisciplina
                 ?? throw new ArgumentNullException(nameof(matriculaService));
         }
 
-        public async Task<bool> ValidaDisponibilidadeTurmaDisciplinaAsync(int idTurmaDisciplina)
+        public async Task<bool> ValidaDisponibilidadeTurmaDisciplinaAsync(int idDisciplina)
         {
-            var idDisciplina = await ConsultaDisciplinaPorIdTurmaDisciplinaAsync(idTurmaDisciplina);
-
             int quantidadeVagasDisciplina = await disciplinaService.ConsultaVagasDisciplina(idDisciplina);
 
-            int quantidadeMatriculados = await matriculaService.ConsultaQuantidadeMatriculasTurmaDisciplinaAsync(idTurmaDisciplina);
+            int quantidadeMatriculados = await matriculaService.ConsultaQuantidadeMatriculasTurmaDisciplinaAsync(idDisciplina);
 
             if(quantidadeVagasDisciplina > quantidadeMatriculados)
             {
@@ -35,7 +32,7 @@ namespace Domain.Service.TurmaDisciplina
             }
             else
             {
-                return false;// Retornar mensagem de erro indicando que não há vagas disponíveis
+                return false;// Retornar exception indicando que não há vagas disponíveis
             }
         }
 

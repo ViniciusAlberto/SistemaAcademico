@@ -1,7 +1,5 @@
 ﻿using Domain.Models.Disciplina;
-using Domain.Models.DisciplinaTurma;
 using Domain.Models.Matricula;
-using Domain.Models.Turma;
 
 namespace Domain.Models.DisciplinaMatricula
 {

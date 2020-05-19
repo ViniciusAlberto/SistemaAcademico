@@ -26,7 +26,7 @@ namespace WebApi.UseCases
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Retorna a matrícula do aluno.</returns>
-        [HttpGet("{id}/Matricula")]
+        [HttpGet("{id}/Matriculas")]
         [ProducesResponseType(typeof(int), 200)]
         public async Task<IActionResult> EspelhoMatriculaAsync(int id)
         {

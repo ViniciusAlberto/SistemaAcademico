@@ -1,9 +1,5 @@
-﻿using Domain.Models.Disciplina;
-using Domain.Models.DisciplinaMatricula;
-using Domain.Models.Matricula;
-using Domain.Service.Disciplina;
+﻿using Domain.Models.DisciplinaMatricula;
 using Domain.Service.DisciplinaMatricula;
-using Domain.Service.Matricula;
 using System;
 using System.Threading.Tasks;
 

@@ -12,7 +12,6 @@ namespace Presentation
         {
             CreateMap<IDisciplina, ListarDiciplinasSaida>();
             CreateMap<IMatricula, EspelhoMatriculaSaida>();
-        
         }
     }
 }

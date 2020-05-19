@@ -1,11 +1,12 @@
 ﻿using Domain.Models.Aluno.Enum;
 using System;
+using System.Collections.Generic;
 
 namespace Application.UseCase.Matricula
 {
     public class MatriculaEntrada
     {
-        public int IdTurmaDisciplina { get; set; }
+        public IEnumerable<int> Disiplinas { get; set; }
         
         public string Nome { get; set; }
 

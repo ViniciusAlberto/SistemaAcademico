@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Application.UseCase.DisciplinaMatricula.CancelamentoMatricula;
+﻿using Application.UseCase.DisciplinaMatricula.CancelamentoMatricula;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace WebApi.UseCases
 {
@@ -30,6 +28,5 @@ namespace WebApi.UseCases
         {
             return Ok(await cancelamentoMatricula.CancelarDisciplinaAsync(cancelamentoMatriculaEntrada));
         }
-
     }
 }

@@ -13,7 +13,7 @@ namespace Application.UseCase.Matricula
         public CadastroMatricula(IMatriculaService matriculaService,
             ITurmaDisciplinaService turmaDisciplinaService)
         {
-            this.matriculaService = matriculaService 
+            this.matriculaService = matriculaService
                 ?? throw new ArgumentNullException(nameof(matriculaService));
 
             this.turmaDisciplinaService = turmaDisciplinaService
@@ -22,9 +22,13 @@ namespace Application.UseCase.Matricula
 
         public async Task<int> RealizaMatriculaAsync(MatriculaEntrada matriculaEntrada)
         {
-            await turmaDisciplinaService
-                .ValidaDisponibilidadeTurmaDisciplinaAsync(matriculaEntrada.IdTurmaDisciplina);
-            
+            foreach (var idDisciplina in matriculaEntrada.Disiplinas)
+            {
+                await turmaDisciplinaService
+                    .ValidaDisponibilidadeTurmaDisciplinaAsync(idDisciplina);
+            }
+
+            //TODO: Adicionar mapeamento entre os objetos MatriculaEntrada e Matricula
             return await matriculaService.RealizaMatriculaAsync(null);
         }
     }

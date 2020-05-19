@@ -1,5 +1,4 @@
 ﻿using Application.UseCase.Matricula;
-using Application.UseCase.Matricula.EspelhoMatricula;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -11,15 +10,11 @@ namespace WebApi.Controllers
     public class MatriculasController : ControllerBase
     {
         private readonly ICadastroMatricula cadastroMatricula;
-        private readonly IEspelhoMatricula espelhoMatricula;
 
-        public MatriculasController(ICadastroMatricula cadastroMatricula, IEspelhoMatricula espelhoMatricula)
+        public MatriculasController(ICadastroMatricula cadastroMatricula)
         {
             this.cadastroMatricula = cadastroMatricula 
                 ?? throw new ArgumentNullException(nameof(cadastroMatricula));
-
-            this.espelhoMatricula = espelhoMatricula
-                ?? throw new ArgumentNullException(nameof(espelhoMatricula));
         }
 
         /// <summary>
@@ -33,7 +28,5 @@ namespace WebApi.Controllers
         {
             return Ok(await cadastroMatricula.RealizaMatriculaAsync(matriculaEntrada));
         }
-
-       
     }
 }
