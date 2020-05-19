@@ -15,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using AutoMapper;
 using Presentation;
 using Application.UseCase.Matricula.EspelhoMatricula;
+using Domain.Service.DisciplinaMatricula;
 
 namespace WebApi
 {
@@ -27,7 +28,7 @@ namespace WebApi
             #region Repository
             services.AddScoped<IAlunoRepository, AlunoRepository>();
             services.AddScoped<IMatriculaRepository, MatriculaRepository>();
-            services.AddScoped<IDisciplinaRepository, DisciplinaRepository>();
+            services.AddScoped<IDisciplinaRepository, DisciplinaRepository>();   
             services.AddScoped<IDisciplinaMatriculaRepository, DisciplinaMatriculaRepository>();
             #endregion
 
@@ -42,6 +43,7 @@ namespace WebApi
             #region Services
             services.AddScoped<IAlunoService, AlunoService>();
             services.AddScoped<IDisciplinaService, DisciplinaService>();
+            services.AddScoped<IDisciplinaMatriculaService, DisciplinaMatriculaService>();
             services.AddScoped<IMatriculaService, MatriculaService>();
             services.AddScoped<ITurmaDisciplinaService, TurmaDisciplinaService>();
             #endregion

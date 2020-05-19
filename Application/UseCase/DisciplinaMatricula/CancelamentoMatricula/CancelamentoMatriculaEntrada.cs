@@ -10,6 +10,6 @@ namespace Application.UseCase.DisciplinaMatricula.CancelamentoMatricula
 
         public int IdDisciplina { get; set; }
 
-        public int IdAluno { get; set; }
+     
     }
 }

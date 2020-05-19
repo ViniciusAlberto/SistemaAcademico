@@ -1,4 +1,5 @@
 ﻿using Domain.Models.Disciplina;
+using Domain.Models.DisciplinaMatricula;
 using Domain.Models.Matricula;
 using Domain.Service.Disciplina;
 using Domain.Service.DisciplinaMatricula;
@@ -11,39 +12,28 @@ namespace Application.UseCase.DisciplinaMatricula.CancelamentoMatricula
 {
     public class CancelamentoMatricula : ICancelamentoMatricula
     {
-        public CancelamentoMatricula(IDisciplinaMatriculaService disciplinaMatriculaService,
-            IMatriculaService matriculaService, IDisciplinaService disciplinaService)
+        private readonly IDisciplinaMatriculaService disciplinaMatriculaService;
+        public CancelamentoMatricula(IDisciplinaMatriculaService disciplinaMatriculaService)
         {
             this.disciplinaMatriculaService = disciplinaMatriculaService 
-                ?? throw new ArgumentNullException(nameof(disciplinaMatriculaService));
-            this.matriculaService = matriculaService 
-                ?? throw new ArgumentNullException(nameof(matriculaService));
-            this.disciplinaService = disciplinaService 
-                ?? throw new ArgumentNullException(nameof(disciplinaService));
-        }
-
-        private readonly IDisciplinaMatriculaService disciplinaMatriculaService;
-        private readonly IMatriculaService matriculaService;
-        private readonly IDisciplinaService disciplinaService;
+                ?? throw new ArgumentNullException(nameof(disciplinaMatriculaService));        
+        }         
 
         public async Task<bool> CancelarDisciplinaAsync(CancelamentoMatriculaEntrada cancelamentoMatriculaEntrada)
         {
+            IDisciplinaMatricula disciplinaMatricula = await disciplinaMatriculaService.ValidarDisciplinaMatriculaAsync(cancelamentoMatriculaEntrada.IdDisciplina, cancelamentoMatriculaEntrada.IdMatricula);
 
-            IDisciplina disciplina = await disciplinaService.ConsultarDisciplinaAsync(cancelamentoMatriculaEntrada.IdDisciplina);
-            IMatricula  matricula = await matriculaService.ConsultarMatriculaAsync(cancelamentoMatriculaEntrada.IdMatricula);
+            if (disciplinaMatricula == null)
+                return false;        
 
-            if (disciplina != null || matricula != null)
-            {
+
+            if(disciplinaMatricula.Situacao == Situcao.Cancelado)
                 return false;
-            }
 
-            var disciplinaMatricula = new Domain.Models.DisciplinaMatricula.DisciplinaMatricula(){
-                Disciplina = disciplina,
-                Matricula = matricula,
-                Situacao = Domain.Models.DisciplinaMatricula.Situcao.Cancelado
-            };
 
-            return await disciplinaMatriculaService.CancelamentoMatricula(disciplinaMatricula);
+            disciplinaMatricula.Situacao = Situcao.Cancelado;
+
+            return await disciplinaMatriculaService.CancelamentoMatriculaAsync(disciplinaMatricula);
         }
     }
 }

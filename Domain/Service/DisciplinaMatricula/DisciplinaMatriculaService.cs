@@ -17,9 +17,14 @@ namespace Domain.Service.DisciplinaMatricula
                 ?? throw new ArgumentNullException(nameof(disciplinaMatriculaRepository));
         }
 
-        public async Task<bool> CancelamentoMatricula(IDisciplinaMatricula disciplinaMatricula)
+        public async Task<bool> CancelamentoMatriculaAsync(IDisciplinaMatricula disciplinaMatricula)
         {
-           return await disciplinaMatriculaRepository.CancelamentoMatricula(disciplinaMatricula);
+           return await disciplinaMatriculaRepository.CancelamentoMatriculaAsync(disciplinaMatricula);
+        }
+
+        public async Task<IDisciplinaMatricula> ValidarDisciplinaMatriculaAsync(int idDisciplina, int idMatricula)
+        {
+            return await  disciplinaMatriculaRepository.ValidarDisciplinaMatriculaAsync(idDisciplina, idMatricula);
         }
     }
 }

@@ -8,6 +8,8 @@ namespace Domain.Repository
 {
     public interface IDisciplinaMatriculaRepository
     {
-        Task<bool> CancelamentoMatricula(IDisciplinaMatricula disciplinaMatricula);
+       
+        Task<bool> CancelamentoMatriculaAsync(IDisciplinaMatricula disciplinaMatricula);
+         Task<IDisciplinaMatricula> ValidarDisciplinaMatriculaAsync(int idDisciplina, int idMatricula);
     }
 }

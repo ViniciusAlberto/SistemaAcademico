@@ -10,6 +10,7 @@ namespace Domain.Service.DisciplinaMatricula
 {
     public interface IDisciplinaMatriculaService
     {
-        Task<bool> CancelamentoMatricula(IDisciplinaMatricula disciplinaMatricula);      
+        Task<bool> CancelamentoMatriculaAsync(IDisciplinaMatricula disciplinaMatricula);
+        Task<IDisciplinaMatricula> ValidarDisciplinaMatriculaAsync(int idDisciplina, int idMatricula);
     }
 }
